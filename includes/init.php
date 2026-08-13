@@ -40,3 +40,12 @@ try {
 
 require_once __DIR__ . '/functions.php';
 require_once __DIR__ . '/auth.php';
+
+// Verifikasi CSRF terpusat untuk semua permintaan POST di seluruh sistem,
+// supaya tidak ada endpoint yang lupa ditambahkan pengecekannya satu per satu.
+// Webhook Midtrans dikecualikan: notifikasi itu dikirim server Midtrans
+// langsung (bukan dari form/sesi browser kita) dan sudah diverifikasi lewat
+// signature key-nya sendiri di payment/callback.php.
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && !defined('SKIP_CSRF')) {
+    csrf_verify();
+}

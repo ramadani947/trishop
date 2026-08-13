@@ -11,6 +11,11 @@
  * menu Settings > Configuration > Payment Notification URL.
  */
 
+// Notifikasi ini dikirim langsung oleh server Midtrans, bukan lewat form
+// atau sesi browser, sehingga tidak membawa (dan tidak perlu membawa) token
+// CSRF. Keasliannya diverifikasi lewat signature key di bawah, bukan CSRF.
+define('SKIP_CSRF', true);
+
 require_once __DIR__ . '/../includes/init.php';
 require_once __DIR__ . '/../includes/midtrans.php';
 

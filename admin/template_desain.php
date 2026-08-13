@@ -111,7 +111,7 @@ require_once __DIR__ . '/../includes/admin_header.php';
                     <div class="alert alert-danger py-2"><?= e($error) ?></div>
                 <?php endif; ?>
 
-                <form method="post" enctype="multipart/form-data">
+                <form method="post" enctype="multipart/form-data"><?= csrf_field() ?>
                     <input type="hidden" name="aksi" value="simpan">
                     <input type="hidden" name="id" value="<?= $editId ?>">
 

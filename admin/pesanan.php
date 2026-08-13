@@ -273,7 +273,7 @@ require_once __DIR__ . '/../includes/admin_header.php';
                     <div class="d-flex gap-2">
                         <?php if ($p['status'] === 'diproses'): ?>
                             <form method="post"
-                                  onsubmit="return confirm('Tandai pesanan ini sebagai Selesai?');">
+                                  onsubmit="return confirm('Tandai pesanan ini sebagai Selesai?');"><?= csrf_field() ?>
                                 <input type="hidden" name="aksi" value="ubah_status">
                                 <input type="hidden" name="id" value="<?= (int) $p['id'] ?>">
                                 <input type="hidden" name="filter" value="<?= e($filter) ?>">
@@ -287,7 +287,7 @@ require_once __DIR__ . '/../includes/admin_header.php';
                             </span>
 
                             <form method="post"
-                                  onsubmit="return confirm('Batalkan pesanan ini?');">
+                                  onsubmit="return confirm('Batalkan pesanan ini?');"><?= csrf_field() ?>
                                 <input type="hidden" name="aksi" value="ubah_status">
                                 <input type="hidden" name="id" value="<?= (int) $p['id'] ?>">
                                 <input type="hidden" name="filter" value="<?= e($filter) ?>">

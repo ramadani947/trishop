@@ -66,7 +66,7 @@ require_once __DIR__ . '/../includes/auth_header.php';
                 <div class="alert alert-<?= e($flash['tipe']) ?> py-2"><?= e($flash['pesan']) ?></div>
             <?php endif; ?>
 
-            <form method="post" action="">
+            <form method="post" action=""><?= csrf_field() ?>
 
                 <!-- Pilihan peran: pelanggan atau admin -->
                 <div class="mb-3">

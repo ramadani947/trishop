@@ -43,7 +43,7 @@ $tautanProduk = BASE_URL . '/pelanggan/detail_produk.php?id=' . (int) $p['id'];
                      ke katalog dengan pesan flash. -->
                 <form method="post" class="flex-fill"
                       action="<?= BASE_URL ?>/pelanggan/tambah_keranjang.php"
-                      data-tambah-keranjang>
+                      data-tambah-keranjang><?= csrf_field() ?>
                     <input type="hidden" name="produk_id" value="<?= (int) $p['id'] ?>">
                     <input type="hidden" name="qty" value="1">
                     <input type="hidden" name="kembali" value="katalog">

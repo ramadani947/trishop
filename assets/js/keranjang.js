@@ -202,6 +202,14 @@
             data.append('qty', qty);
             data.append('format', 'json');
 
+            // Token CSRF diambil dari input tersembunyi bawaan form ini,
+            // sebab body permintaan di sini dirakit manual dan bukan lewat
+            // FormData(form) yang otomatis menyertakannya.
+            var tokenInput = form.querySelector('input[name="csrf_token"]');
+            if (tokenInput) {
+                data.append('csrf_token', tokenInput.value);
+            }
+
             input.disabled = true;
 
             // Tanpa atribut action, form.action berisi alamat halaman ini.

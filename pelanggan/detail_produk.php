@@ -86,7 +86,7 @@ require_once __DIR__ . '/../includes/header.php';
             <?php if ($produk['stok'] > 0): ?>
                 <form method="post" class="row g-2 align-items-end mt-4" style="max-width: 380px;"
                       action="<?= BASE_URL ?>/pelanggan/tambah_keranjang.php"
-                      data-tambah-keranjang>
+                      data-tambah-keranjang><?= csrf_field() ?>
                     <input type="hidden" name="produk_id" value="<?= (int) $produk['id'] ?>">
                     <input type="hidden" name="kembali" value="detail">
                     <div class="col-5">

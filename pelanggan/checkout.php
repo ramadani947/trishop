@@ -338,7 +338,7 @@ require_once __DIR__ . '/../includes/header.php';
 <?php if ($pesananId === 0): ?>
 
     <!-- ============ MODE A: konfirmasi keranjang ============ -->
-    <form method="post">
+    <form method="post"><?= csrf_field() ?>
         <input type="hidden" name="aksi" value="buat_pesanan">
 
         <div class="row g-4">
@@ -503,7 +503,7 @@ require_once __DIR__ . '/../includes/header.php';
 
                     <hr class="my-3">
 
-                    <form method="post" onsubmit="return confirm('Batalkan pesanan <?= e($pesanan['kode_pesanan']) ?>? Tindakan ini tidak dapat dibatalkan.');">
+                    <form method="post" onsubmit="return confirm('Batalkan pesanan <?= e($pesanan['kode_pesanan']) ?>? Tindakan ini tidak dapat dibatalkan.');"><?= csrf_field() ?>
                         <input type="hidden" name="aksi" value="batalkan">
                         <input type="hidden" name="pesanan_id" value="<?= (int) $pesanan['id'] ?>">
                         <button type="submit" class="btn btn-outline-danger btn-sm w-100">

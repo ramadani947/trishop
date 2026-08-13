@@ -71,7 +71,7 @@ if (is_admin()) {
                     <div class="alert alert-success py-2"><?= e($sukses) ?></div>
                 <?php endif; ?>
 
-                <form method="post">
+                <form method="post"><?= csrf_field() ?>
 
                     <div class="mb-3">
                         <label for="sandi_lama" class="form-label">Kata Sandi Lama</label>

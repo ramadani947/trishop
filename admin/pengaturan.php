@@ -102,7 +102,7 @@ require_once __DIR__ . '/../includes/admin_header.php';
                     Data berikut digunakan sebagai kop surat pada Laporan Penjualan Periodik.
                 </p>
 
-                <form method="post" enctype="multipart/form-data">
+                <form method="post" enctype="multipart/form-data"><?= csrf_field() ?>
 
                     <div class="mb-3">
                         <label for="nama_toko" class="form-label">Nama Usaha</label>

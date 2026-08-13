@@ -198,7 +198,7 @@ require_once __DIR__ . '/../includes/header.php';
 
                                     <td class="text-center">
                                         <form method="post" class="d-flex gap-1 justify-content-center"
-                                              data-form-qty data-id="<?= (int) $item['id'] ?>">
+                                              data-form-qty data-id="<?= (int) $item['id'] ?>"><?= csrf_field() ?>
                                             <input type="hidden" name="aksi" value="ubah">
                                             <input type="hidden" name="id" value="<?= (int) $item['id'] ?>">
                                             <input type="number" name="qty" class="form-control form-control-sm"
@@ -214,7 +214,7 @@ require_once __DIR__ . '/../includes/header.php';
 
                                     <td class="text-end">
                                         <form method="post"
-                                              onsubmit="return confirm('Hapus item ini dari keranjang?');">
+                                              onsubmit="return confirm('Hapus item ini dari keranjang?');"><?= csrf_field() ?>
                                             <input type="hidden" name="aksi" value="hapus">
                                             <input type="hidden" name="id" value="<?= (int) $item['id'] ?>">
                                             <button class="btn btn-sm btn-outline-danger">&times;</button>

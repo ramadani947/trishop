@@ -168,7 +168,7 @@ require_once __DIR__ . '/../includes/header.php';
 
     <?php else: ?>
 
-    <form method="post" enctype="multipart/form-data">
+    <form method="post" enctype="multipart/form-data"><?= csrf_field() ?>
         <div class="row g-4">
 
             <div class="col-lg-8">

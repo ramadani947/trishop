@@ -79,6 +79,39 @@ function wajib_pelanggan()
 }
 
 /**
+ * Token CSRF untuk sesi berjalan. Dibuat sekali per sesi lalu dipakai ulang,
+ * supaya beberapa tab/form yang terbuka bersamaan tetap valid.
+ */
+function csrf_token()
+{
+    if (empty($_SESSION['csrf_token'])) {
+        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+    }
+    return $_SESSION['csrf_token'];
+}
+
+/** Input tersembunyi berisi token CSRF, siap ditaruh di dalam <form>. */
+function csrf_field()
+{
+    return '<input type="hidden" name="csrf_token" value="' . e(csrf_token()) . '">';
+}
+
+/**
+ * Wajib dipanggil di awal setiap penanganan POST yang mengubah data.
+ * Menghentikan permintaan bila token tidak ada atau tidak cocok dengan sesi.
+ */
+function csrf_verify()
+{
+    $token = $_POST['csrf_token'] ?? '';
+    if (!is_string($token) || $token === '' || empty($_SESSION['csrf_token'])
+        || !hash_equals($_SESSION['csrf_token'], $token)) {
+        http_response_code(403);
+        set_flash('danger', 'Sesi formulir sudah tidak valid, silakan coba lagi.');
+        redirect($_SERVER['HTTP_REFERER'] ?? BASE_URL . '/index.php');
+    }
+}
+
+/**
  * Verifikasi kredensial login.
  * Mengembalikan data pengguna bila valid, atau false bila gagal.
  */

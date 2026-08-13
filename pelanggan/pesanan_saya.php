@@ -130,7 +130,7 @@ require_once __DIR__ . '/../includes/header.php';
                                 <!-- Pembatalan ditangani checkout.php, memakai penanganan
                                      yang sama dengan tombol pada halaman pembayaran. -->
                                 <form method="post" action="<?= BASE_URL ?>/pelanggan/checkout.php"
-                                      onsubmit="return confirm('Batalkan pesanan <?= e($p['kode_pesanan']) ?>? Tindakan ini tidak dapat dibatalkan.');">
+                                      onsubmit="return confirm('Batalkan pesanan <?= e($p['kode_pesanan']) ?>? Tindakan ini tidak dapat dibatalkan.');"><?= csrf_field() ?>
                                     <input type="hidden" name="aksi" value="batalkan">
                                     <input type="hidden" name="pesanan_id" value="<?= (int) $p['id'] ?>">
                                     <button type="submit" class="btn btn-sm btn-outline-danger">

@@ -55,7 +55,7 @@ require_once __DIR__ . '/../includes/auth_header.php';
                 <div class="alert alert-danger py-2"><?= e($error) ?></div>
             <?php endif; ?>
 
-            <form method="post" action="">
+            <form method="post" action=""><?= csrf_field() ?>
                 <div class="mb-3">
                     <label for="nama" class="form-label">Nama Lengkap</label>
                     <input type="text" class="form-control" id="nama" name="nama"
