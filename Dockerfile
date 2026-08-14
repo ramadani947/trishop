@@ -3,8 +3,12 @@ FROM php:8.2-apache
 # Ekstensi PHP yang dibutuhkan (PDO MySQL untuk koneksi database)
 RUN docker-php-ext-install pdo pdo_mysql mysqli
 
-# Aktifkan mod_rewrite (jaga-jaga bila dibutuhkan untuk URL rewriting)
-RUN a2enmod rewrite
+# Pastikan hanya satu MPM (prefork) yang aktif -- mod_php mengharuskan
+# prefork, dan mengaktifkan modul lain di beberapa image dasar bisa
+# memicu mpm_event ikut aktif bersamaan, menyebabkan Apache gagal start
+# dengan error "More than one MPM loaded".
+RUN a2dismod mpm_event mpm_worker 2>/dev/null; \
+    a2enmod mpm_prefork rewrite
 
 WORKDIR /var/www/html
 
@@ -15,11 +19,11 @@ COPY . /var/www/html/
 RUN chown -R www-data:www-data /var/www/html/uploads \
     && chmod -R 775 /var/www/html/uploads
 
+# Script entrypoint yang menyesuaikan port Apache dengan variabel $PORT
+# dari Railway saat container dijalankan (bukan saat build).
+COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
 EXPOSE 8080
 
-# Railway menyuntikkan variabel PORT secara dinamis saat runtime (bukan saat
-# build), jadi konfigurasi Apache diubah lewat shell command di CMD, bukan
-# lewat RUN, agar nilai $PORT yang dipakai adalah yang aktual dari Railway.
-CMD sh -c "sed -i \"s/Listen 80/Listen ${PORT:-8080}/\" /etc/apache2/ports.conf \
-    && sed -i \"s/<VirtualHost \\*:80>/<VirtualHost *:${PORT:-8080}>/\" /etc/apache2/sites-available/000-default.conf \
-    && apache2-foreground"
+CMD ["/usr/local/bin/docker-entrypoint.sh"]
