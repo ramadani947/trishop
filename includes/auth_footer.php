@@ -7,14 +7,11 @@
  * isian kata sandi dan memerlukan tombol "Lihat".
  */
 ?>
+            </div>
+
         </div>
-    </div>
+    </main>
 
-    <p class="text-center mt-3 mb-0">
-        <a href="<?= BASE_URL ?>/index.php" class="tautan-kembali">&larr; Kembali ke beranda</a>
-    </p>
-
-</div>
 </div>
 
 <script src="<?= aset("assets/js/sandi.js") ?>"></script>

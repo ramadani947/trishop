@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 $judulHalaman = 'Login';
-$judulPanel   = 'Tri Shop Souvenir';
+$judulPanel   = '';
 $subJudul     = 'Masuk ke akun Anda';
 $lebarPanel   = '430px';
 
@@ -71,14 +71,18 @@ require_once __DIR__ . '/../includes/auth_header.php';
                 <!-- Pilihan peran: pelanggan atau admin -->
                 <div class="mb-3">
                     <label class="form-label">Masuk sebagai</label>
-                    <div class="btn-group w-100" role="group" aria-label="Pilihan peran login">
+                    <div class="auth-tombol-peran" role="group" aria-label="Pilihan peran login">
                         <input type="radio" class="btn-check" name="role" id="role-pelanggan"
                                value="pelanggan" <?= $role_dipilih === 'pelanggan' ? 'checked' : '' ?>>
-                        <label class="btn btn-outline-primary" for="role-pelanggan">Pelanggan</label>
+                        <label for="role-pelanggan">
+                            <i class="bi bi-person"></i> Pelanggan
+                        </label>
 
                         <input type="radio" class="btn-check" name="role" id="role-admin"
                                value="admin" <?= $role_dipilih === 'admin' ? 'checked' : '' ?>>
-                        <label class="btn btn-outline-primary" for="role-admin">Admin</label>
+                        <label for="role-admin">
+                            <i class="bi bi-lock"></i> Admin
+                        </label>
                     </div>
                 </div>
 
@@ -95,7 +99,9 @@ require_once __DIR__ . '/../includes/auth_header.php';
                     <div class="form-text">Klik &ldquo;Lihat&rdquo; untuk memperlihatkan kata sandi.</div>
                 </div>
 
-                <button type="submit" class="btn btn-primary w-100">Login</button>
+                <button type="submit" class="btn-auth-kirim">
+                    Login <i class="bi bi-arrow-right"></i>
+                </button>
             </form>
 
             <p class="text-center text-muted mt-3 mb-0" id="tautan-daftar">

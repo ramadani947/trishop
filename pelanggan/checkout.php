@@ -324,7 +324,11 @@ if ($pesananId === 0) {
     $judulHalaman = 'Pembayaran';
 }
 
-$menuAktif = 'keranjang';
+// Menu navbar yang tersorot mengikuti jalur masuknya: checkout baru dari
+// keranjang (Mode A) menyorot "Keranjang", sedangkan melanjutkan
+// pembayaran pesanan yang sudah ada (Mode B - umumnya dituju dari
+// "Pesanan Saya") menyorot "Pesanan Saya".
+$menuAktif = $pesananId === 0 ? 'keranjang' : 'pesanan';
 
 require_once __DIR__ . '/../includes/header.php';
 ?>

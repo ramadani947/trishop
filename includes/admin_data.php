@@ -131,6 +131,10 @@ function slot_gambar_beranda($slot = null)
             'label' => 'Harga Terhitung Otomatis',
             'alt'   => 'Ringkasan harga custom order yang dihitung otomatis oleh sistem',
         ],
+        'login-hero' => [
+            'label' => 'Foto Panel Masuk & Daftar',
+            'alt'   => 'Produk souvenir Tri Shop di atas meja, tampil pada panel halaman masuk dan daftar',
+        ],
     ];
 
     return $slot === null ? $daftar : ($daftar[$slot] ?? null);

@@ -47,7 +47,7 @@ $tautanProduk = BASE_URL . '/pelanggan/detail_produk.php?id=' . (int) $p['id'];
                     <input type="hidden" name="produk_id" value="<?= (int) $p['id'] ?>">
                     <input type="hidden" name="qty" value="1">
                     <input type="hidden" name="kembali" value="katalog">
-                    <button type="submit" class="btn btn-sm btn-primary w-100">
+                    <button type="submit" class="btn btn-sm btn-outline-primary w-100">
                         + Keranjang
                     </button>
                 </form>

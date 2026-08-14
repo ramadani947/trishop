@@ -87,7 +87,9 @@ require_once __DIR__ . '/../includes/auth_header.php';
                            minlength="8" required>
                 </div>
 
-                <button type="submit" class="btn btn-primary w-100">Daftar</button>
+                <button type="submit" class="btn-auth-kirim">
+                    Daftar <i class="bi bi-arrow-right"></i>
+                </button>
             </form>
 
             <p class="text-center text-muted mt-3 mb-0">

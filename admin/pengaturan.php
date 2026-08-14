@@ -149,10 +149,14 @@ require_once __DIR__ . '/../includes/admin_header.php';
 
                     <h2 class="h6 mb-1">Gambar Beranda</h2>
                     <p class="text-muted small">
-                        Ketiga gambar ini tampil pada bagian keunggulan di halaman
-                        beranda. Ukuran yang paling pas 1000 &times; 625 piksel
-                        (perbandingan 16:10). Selama belum diisi, yang tampil
-                        adalah petak berwarna.
+                        Ketiga gambar pertama tampil pada bagian keunggulan di
+                        halaman beranda. Ukuran yang paling pas 1000 &times; 625
+                        piksel (perbandingan 16:10). Gambar terakhir, &ldquo;Foto
+                        Panel Masuk &amp; Daftar&rdquo;, tampil di panel kiri
+                        halaman masuk dan daftar; karena panelnya tegak, pilih
+                        foto dengan orientasi potret, sekitar 900 &times; 1300
+                        piksel. Selama belum diisi, yang tampil adalah petak
+                        berwarna seperti sebelumnya.
                     </p>
 
                     <?php foreach (slot_gambar_beranda() as $slot => $info): ?>

@@ -23,37 +23,37 @@
        lewat rgba( --tss-NAMA-rgb , alpha ) sehingga angkanya tidak perlu ditulis
        ulang. Sebelum ini angka tersebut dipatok manual di 58 tempat, dan
        mengganti tema berarti menyisir semuanya satu per satu. */
-    --tss-sian:            #35B4CC;   /* aksen hias: jahitan, ikon, angka besar */
-    --tss-sian-rgb:        53,180,204;
-    --tss-sian-tua:        #0E7286;   /* tombol utama dan teks aksen (5,57:1 di atas putih) */
-    --tss-sian-tua-rgb:    14,114,134;
-    --tss-sian-gelap:      #0A5A6B;   /* keadaan hover dan ditekan */
-    --tss-sian-malam:      #0B3D49;   /* panel gelap dan bilah admin */
-    --tss-sian-malam-rgb:  11,61,73;
-    --tss-sian-muda:       #CBEDF4;   /* isian lembut, chip, sorotan */
-    --tss-sian-muda-rgb:   203,237,244;
-    --tss-sian-pucat:      #E7F7FB;   /* permukaan kartu bernuansa sian */
+    --tss-sian:            #E68A3A;   /* aksen hias: jahitan, ikon, angka besar (accent orange) */
+    --tss-sian-rgb:        230,138,58;
+    --tss-sian-tua:        #1E293B;   /* tombol utama dan teks aksen (primary navy) */
+    --tss-sian-tua-rgb:    30,41,59;
+    --tss-sian-gelap:      #15202F;   /* keadaan hover dan ditekan */
+    --tss-sian-malam:      #0F172A;   /* panel gelap dan bilah admin */
+    --tss-sian-malam-rgb:  15,23,42;
+    --tss-sian-muda:       #E2E8F0;   /* isian lembut, chip, sorotan */
+    --tss-sian-muda-rgb:   226,232,240;
+    --tss-sian-pucat:      #F4F6F9;   /* permukaan kartu bernuansa navy */
 
     /* --- Lilac sebagai warna pendamping ---
        Dipakai hemat: label kecil, nomor langkah, dan ujung gradien kaca.
        Perannya memberi kedalaman pada tema, bukan bersaing dengan sian. */
-    --tss-lilac:           #A78BE8;   /* aksen hias */
-    --tss-lilac-rgb:       167,139,232;
-    --tss-lilac-tua:       #6D4FC0;   /* teks aksen (5,95:1 di atas putih) */
-    --tss-lilac-tua-rgb:   109,79,192;
-    --tss-lilac-muda:      #E6DEFA;   /* isian lembut */
-    --tss-lilac-muda-rgb:  230,222,250;
-    --tss-lilac-pucat:     #F2EEFD;   /* permukaan bernuansa lilac */
+    --tss-lilac:           #E68A3A;   /* aksen hias (accent orange) */
+    --tss-lilac-rgb:       230,138,58;
+    --tss-lilac-tua:       #B5621F;   /* teks aksen di atas putih (lolos 4.5:1) */
+    --tss-lilac-tua-rgb:   181,98,31;
+    --tss-lilac-muda:      #FBE4CC;   /* isian lembut */
+    --tss-lilac-muda-rgb:  251,228,204;
+    --tss-lilac-pucat:     #FDF1E6;   /* permukaan bernuansa orange */
 
-    --tss-langit:          #E6F2F7;   /* latar bagian halaman */
-    --tss-kabut:           #F6FBFD;   /* latar body */
-    --tss-garis:           #D6E9EF;   /* pembatas */
+    --tss-langit:          #F8F5EF;   /* latar bagian halaman (secondary cream) */
+    --tss-kabut:           #FCFCFA;   /* latar body (background off white) */
+    --tss-garis:           #E5E7EB;   /* pembatas (border light gray) */
 
-    --tss-tinta:           #14303A;   /* teks utama, sian keabuan */
-    --tss-tinta-rgb:       20,48,58;
+    --tss-tinta:           #1F2937;   /* teks utama (text dark) */
+    --tss-tinta-rgb:       31,41,55;
     /* Teks sekunder sengaja digelapkan sampai lolos 4.5:1 bukan hanya di atas
-       putih, tetapi juga di atas permukaan sian muda --tss-langit. */
-    --tss-abu:             #4E626D;
+       putih, tetapi juga di atas permukaan cream --tss-langit. */
+    --tss-abu:             #4B5563;
 
     /* Warna status, disetel agar tetap serasi dengan keluarga sian.
 
@@ -66,11 +66,11 @@
        angkanya. Ketika angka itu masih dipatok manual, mengubah hijaunya
        sempat membuat latar chip memakai hijau lama sementara teksnya sudah
        hijau baru. */
-    --tss-sukses:        #1B6E52;
-    --tss-sukses-rgb:    27,110,82;
-    --tss-tunggu:        #A97117;
-    --tss-bahaya:        #B03A32;
-    --tss-bahaya-rgb:    176,58,50;
+    --tss-sukses:        #16A34A;
+    --tss-sukses-rgb:    22,163,74;
+    --tss-tunggu:        #B45309;
+    --tss-bahaya:        #DC2626;
+    --tss-bahaya-rgb:    220,38,38;
 
     /* --- Sudut squircle ---
        Lengkung dibuat besar dan konsisten. Wadah besar memakai nilai besar,
@@ -106,9 +106,9 @@
        Kaca hanya terbaca bila ada sesuatu di belakangnya; karena latarnya
        rata dan putih, tintlah yang harus datang dari kacanya sendiri.
        Dengan sian muda, selisih puncak ke dasar menjadi sekitar 22 dari 255. */
-    --tss-kaca-isi:      linear-gradient(160deg, rgba(255,255,255,.94) 0%,
-                         rgba(var(--tss-sian-muda-rgb), .34) 55%,
-                         rgba(var(--tss-lilac-muda-rgb), .45) 100%);
+    --tss-kaca-isi:      linear-gradient(160deg, rgba(255,255,255,.99) 0%,
+                         rgba(255,255,255,.94) 55%,
+                         rgba(var(--tss-sian-muda-rgb), .30) 100%);
     --tss-kaca-isi-tipis: linear-gradient(160deg, rgba(255,255,255,.72), rgba(var(--tss-sian-muda-rgb), .3));
     --tss-kaca-tepi:     rgba(255,255,255,.85);
     --tss-kaca-blur:     saturate(180%) blur(20px);
@@ -133,7 +133,7 @@
 
     /* Penimpaan variabel Bootstrap */
     --bs-primary:        var(--tss-sian-tua);
-    --bs-primary-rgb:    30, 111, 176;
+    --bs-primary-rgb:    30, 41, 59;
     --bs-body-color:     var(--tss-tinta);
     --bs-body-font-family: var(--tss-teks);
     --bs-border-color:   var(--tss-garis);
@@ -485,7 +485,7 @@ button:focus-visible,
     justify-content: center;
     width: 40px;
     height: 40px;
-    border: none;
+    border: 1.5px solid var(--tss-sian-tua);
     border-radius: 50%;
     background: var(--tss-sian-pucat);
     color: var(--tss-sian-tua);
@@ -875,10 +875,12 @@ button:focus-visible,
     /* Isian sian muda dipasang sebagai warna dasar (bukan lagi transparan)
        supaya tombol tidak menyatu dengan kartu putih/kaca di baliknya -
        garis sian pucat saja tidak cukup terlihat pada kombinasi kaca yang
-       juga bertint putih-ke-sian-muda. */
+       juga bertint putih-ke-sian-muda. Border dan teks memakai sian-tua
+       (bukan --tss-sian, yang sebenarnya aksen oranye) supaya senada
+       dengan warna solid tombol "+ Keranjang" di sebelahnya. */
     --bs-btn-color: var(--tss-sian-tua);
     --bs-btn-bg: var(--tss-sian-muda);
-    --bs-btn-border-color: var(--tss-sian);
+    --bs-btn-border-color: var(--tss-sian-tua);
     --bs-btn-hover-bg: var(--tss-sian-tua);
     --bs-btn-hover-border-color: var(--tss-sian-tua);
     --bs-btn-active-bg: var(--tss-sian-gelap);
@@ -1307,73 +1309,313 @@ textarea.form-control { border-radius: var(--tss-radius); }
 
 /* --------------------------------------------------------------------------
    Halaman masuk dan daftar
+   --------------------------------------------------------------------------
+   Satu layar penuh: begitu admin mengunggah foto produk lewat Pengaturan,
+   foto itu memenuhi seluruh layar sebagai latar. Sapaan dan tagline toko
+   ditulis langsung di atas foto (kiri), dan kartu login kaca transparan
+   mengambang di sisi kanan. Sebelum ada foto, latar memakai gradien lama
+   supaya halaman tetap tampil rapi.
    -------------------------------------------------------------------------- */
 
-.latar-auth {
+.auth-body { margin: 0; }
+
+.auth-layar {
+    position: relative;
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background-color: var(--tss-langit);
-    background-image:
-        radial-gradient(760px 420px at 15% 0%, rgba(var(--tss-sian-rgb), .28), transparent 62%),
-        radial-gradient(620px 380px at 92% 100%, rgba(var(--tss-sian-tua-rgb), .16), transparent 60%);
-}
-
-.panel-auth {
     overflow: hidden;
-    border-radius: var(--tss-radius-xl) !important;
-    /* Kaca terang. Panel ini melayang di atas .latar-auth yang bergradien,
-       jadi pembiasannya benar-benar terlihat - berbeda dari kartu biasa yang
-       latarnya rata. */
-    background: var(--tss-kaca-isi);
-    -webkit-backdrop-filter: var(--tss-kaca-blur);
-    backdrop-filter: var(--tss-kaca-blur);
-    border: 1px solid var(--tss-kaca-tepi) !important;
-    box-shadow: var(--tss-kaca-sorot), var(--tss-kaca-bayang-naik) !important;
-}
-
-.panel-auth .kepala {
-    position: relative;
-    padding: 2rem 1.75rem 1.75rem;
-    text-align: center;
     color: #fff;
-    background:
-        radial-gradient(420px 220px at 100% -40%, rgba(var(--tss-sian-rgb), .55), transparent 65%),
-        linear-gradient(135deg, var(--tss-sian-tua) 0%, var(--tss-lilac-tua) 100%);
+    background: linear-gradient(165deg, var(--tss-sian-malam) 0%, var(--tss-sian-tua) 58%, var(--tss-lilac-tua) 140%);
 }
 
-.panel-auth .kepala::after {
-    content: '';
+/* Mode foto: latar memenuhi seluruh layar, dengan overlay gradasi
+   kiri-ke-kanan supaya teks di kiri tetap terbaca dan kartu kaca di
+   kanan punya sesuatu yang nyata untuk diburamkan. */
+.auth-layar-foto {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.auth-layar-foto::before {
+    content: "";
     position: absolute;
-    left: 50%;
-    bottom: 14px;
-    transform: translateX(-50%);
-    width: 56px;
-    height: 3px;
-    border-radius: var(--tss-radius-bulat);
-    background-image: repeating-linear-gradient(
-        to right,
-        rgba(255,255,255,.75) 0,
-        rgba(255,255,255,.75) 7px,
-        transparent 7px,
-        transparent 13px
-    );
+    inset: 0;
+    background: linear-gradient(100deg,
+        rgba(8, 16, 24, .58) 0%,
+        rgba(8, 16, 24, .32) 42%,
+        rgba(8, 16, 24, .12) 62%,
+        rgba(8, 16, 24, .28) 100%);
+    z-index: 0;
+    pointer-events: none;
 }
 
-.panel-auth .kepala .h4,
-.panel-auth .kepala h1 {
+.auth-merek-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: .55;
+    pointer-events: none;
+}
+
+.auth-merek-blob-1 {
+    width: 360px;
+    height: 360px;
+    top: -140px;
+    right: -110px;
+    background: var(--tss-lilac);
+}
+
+.auth-merek-blob-2 {
+    width: 300px;
+    height: 300px;
+    bottom: -120px;
+    left: -90px;
+    background: var(--tss-sian);
+}
+
+.auth-merek-atas {
+    position: absolute;
+    z-index: 1;
+    top: 48px;
+    left: 52px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
     color: #fff;
+    text-decoration: none;
+    width: fit-content;
+}
+
+.auth-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--tss-radius);
+    background: rgba(255,255,255,.16);
+    border: 1px solid rgba(255,255,255,.32);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
     font-family: var(--tss-judul);
-    font-size: 1.6rem;
+    font-weight: 700;
+    font-size: .95rem;
+}
+
+.auth-merek-nama {
+    font-family: var(--tss-judul);
+    font-weight: 700;
+    font-size: 1.12rem;
+    letter-spacing: -.01em;
+}
+
+.auth-merek-tengah {
+    position: relative;
+    z-index: 1;
+    max-width: 480px;
+    padding: 0 52px;
+}
+
+.auth-merek-rintik {
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    font-size: .72rem;
+    font-weight: 600;
+    color: rgba(255,255,255,.72);
+    margin-bottom: 16px;
+}
+
+.auth-merek-judul {
+    font-family: var(--tss-judul);
+    font-size: 2.15rem;
+    font-weight: 700;
+    line-height: 1.28;
+    letter-spacing: -.02em;
+    color: #fff;
+    margin-bottom: 16px;
+    text-shadow: 0 2px 24px rgba(0,0,0,.25);
+}
+
+.auth-merek-teks {
+    color: rgba(255,255,255,.85);
+    max-width: 36ch;
+    line-height: 1.75;
+    margin: 0;
+    text-shadow: 0 1px 12px rgba(0,0,0,.2);
+}
+
+.auth-merek-bawah {
+    position: absolute;
+    z-index: 1;
+    bottom: 32px;
+    left: 52px;
+    font-size: .78rem;
+    color: rgba(255,255,255,.6);
+    margin: 0;
+}
+
+/* --- Kartu login (mengambang di kanan) --- */
+
+.auth-panel-form {
+    position: relative;
+    z-index: 1;
+    flex: 0 0 auto;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 72px 40px 24px;
+}
+
+.auth-form-wrap {
+    width: 100%;
+}
+
+.auth-kepala-mobile {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 26px;
+}
+
+.auth-kepala-mobile .auth-logo-kecil {
+    width: 34px;
+    height: 34px;
+    background: var(--tss-sian-tua);
+    color: #fff;
+    border: none;
+}
+
+.auth-kepala-mobile .auth-merek-nama { color: var(--tss-tinta); }
+
+/* Sebelum ada foto: kartu putih pekat biasa, konsisten dengan gaya kartu
+   di seluruh situs. Begitu ada foto (.auth-layar-foto), kartu berubah
+   jadi kaca buram lewat aturan di bawah. */
+.auth-form-isi {
+    background: #fff;
+    border: 1px solid var(--tss-garis);
+    border-radius: var(--tss-radius-xl);
+    padding: 34px 32px;
+    box-shadow: var(--tss-bayang-naik);
+}
+
+.auth-layar-foto .auth-form-isi {
+    background: rgba(255, 255, 255, .68);
+    border: 1px solid rgba(255, 255, 255, .55);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, .28);
+    -webkit-backdrop-filter: blur(22px) saturate(140%);
+    backdrop-filter: blur(22px) saturate(140%);
+}
+
+.auth-kepala { margin-bottom: 26px; }
+
+.auth-kepala h2 {
+    font-family: var(--tss-judul);
+    font-size: 1.55rem;
     font-weight: 700;
     letter-spacing: -.02em;
-    margin-bottom: .35rem;
+    margin-bottom: 6px;
 }
 
-.panel-auth .kepala p {
-    color: rgba(255,255,255,.78);
-    margin-bottom: .5rem;
-    font-size: .88rem;
+.auth-kepala p {
+    color: var(--tss-abu);
+    font-size: .92rem;
+    margin: 0;
+}
+
+.auth-tautan-beranda {
+    font-size: .85rem;
+    font-weight: 600;
+    color: var(--tss-abu);
+    transition: color .2s ease;
+}
+
+.auth-layar-foto .auth-tautan-beranda { color: rgba(255,255,255,.85); }
+.auth-layar-foto .auth-tautan-beranda:hover { color: #fff; }
+
+.auth-tautan-beranda:hover { color: var(--tss-sian-tua); }
+
+/* --- Pilihan peran & tombol kirim bergaya pil gelap --- */
+
+.auth-tombol-peran {
+    display: flex;
+    gap: 4px;
+    padding: 4px;
+    background: var(--tss-kabut);
+    border: 1px solid var(--tss-garis);
+    border-radius: 999px;
+}
+
+.auth-layar-foto .auth-tombol-peran {
+    background: rgba(255, 255, 255, .35);
+    border-color: rgba(255, 255, 255, .5);
+}
+
+.auth-tombol-peran label {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: .92rem;
+    color: var(--tss-abu);
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease;
+}
+
+.auth-tombol-peran input:checked + label {
+    background: var(--tss-tinta);
+    color: #fff;
+}
+
+.btn-auth-kirim {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 52px;
+    border: none;
+    border-radius: 999px;
+    background: var(--tss-tinta);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: opacity .2s ease;
+}
+
+.btn-auth-kirim:hover { opacity: .92; color: #fff; }
+
+@media (max-width: 900px) {
+    .auth-layar { flex-direction: column; align-items: stretch; }
+
+    .auth-merek-atas { position: static; margin: 32px 20px 0; }
+    .auth-merek-tengah { display: none; }
+    .auth-merek-bawah { display: none; }
+
+    .auth-panel-form {
+        margin-left: 0;
+        flex: 1;
+        padding: 24px 18px 40px;
+    }
+
+    .auth-kepala-mobile { display: flex; }
+    .auth-form-isi { padding: 28px 22px; }
+
+    /* Sebelum ada foto (fallback gradien), kepala mobile ganti logo di
+       atas kartu sudah cukup - foto tak perlu strip tambahan karena
+       gradien penuh tetap terlihat di balik kartu. */
+    .auth-layar-foto .auth-panel-form { padding-top: 140px; }
+}
+
+@media (max-width: 420px) {
+    .auth-form-isi { padding: 24px 18px; border-radius: var(--tss-radius-lg); }
 }
 
 /* --------------------------------------------------------------------------
@@ -1630,16 +1872,6 @@ textarea.form-control { border-radius: var(--tss-radius); }
     box-shadow: var(--tss-kaca-sorot), 0 6px 16px rgba(var(--tss-sian-tua-rgb), .12);
 }
 
-/* --- Panel masuk dan daftar ----------------------------------------------
-   Kaca panelnya ditulis pada definisi .panel-auth di bagian "Halaman masuk
-   dan daftar", satu tempat bersama lengkung dan overflow-nya. */
-
-/* Kepala panel tetap sian pekat: teksnya putih dan harus tetap terbaca,
-   jadi yang ditambahkan hanya pantulan cahaya di tepi atas. */
-.panel-auth .kepala {
-    box-shadow: inset 0 1px 0 rgba(255,255,255,.3);
-}
-
 /* Pemberitahuan melayang: kacanya ditulis langsung pada definisi aslinya di
    bagian "Umpan balik ditambahkan ke keranjang", sebab definisi itu berada
    lebih bawah dan akan menimpa apa pun yang ditulis di sini. */
@@ -1755,7 +1987,7 @@ textarea.form-control { border-radius: var(--tss-radius); }
                 0 2px 6px rgba(var(--tss-sian-tua-rgb), .35);
 }
 
-.tautan-ikon.aktif .lencana-keranjang {
+.tombol-ikon-keranjang.aktif .lencana-keranjang {
     background: linear-gradient(180deg, #5A3FA6, #43307C);
 }
 
@@ -1971,20 +2203,6 @@ textarea.form-control { border-radius: var(--tss-radius); }
     box-shadow: inset 0 1px 0 rgba(255,255,255,.8);
 }
 
-/* Latar halaman masuk diberi lapisan cahaya lembut supaya panel kaca di
-   atasnya punya sesuatu untuk dibiaskan. */
-.latar-auth::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: radial-gradient(600px 400px at 50% 0%, rgba(255,255,255,.45), transparent 65%);
-}
-
-.latar-auth { position: relative; }
-
-.latar-auth > .container { position: relative; z-index: 1; }
-
 /* --- Wadah besar yang bernuansa sian ------------------------------------- */
 
 /* Panel langkah dan footer memakai kaca berwarna sian muda, bukan
@@ -2018,7 +2236,7 @@ textarea.form-control { border-radius: var(--tss-radius); }
     .kartu-produk,
     .langkah,
     .opsi-card,
-    .panel-auth,
+    .auth-form-isi,
     .btn-garis,
     .bilah-atas .container-wide > .navbar,
     #konten > .bg-white:first-child {
@@ -2034,7 +2252,7 @@ textarea.form-control { border-radius: var(--tss-radius); }
     .kartu-produk,
     .langkah,
     .opsi-card,
-    .panel-auth,
+    .auth-form-isi,
     .btn-garis,
     .bilah-atas .container-wide > .navbar,
     #konten > .bg-white:first-child {
@@ -2063,7 +2281,6 @@ textarea.form-control { border-radius: var(--tss-radius); }
 
     .catatan-produk { background: var(--tss-sian-pucat); }
     .kosong, .kaki-admin { background: transparent; }
-    .latar-auth::before { display: none; }
 
     .card > .card-header,
     .card > .card-header.bg-white {
@@ -2161,8 +2378,6 @@ textarea.form-control { border-radius: var(--tss-radius); }
     /* Padding konten admin dirapatkan supaya tabel dapat ruang lebih lega */
     #konten > main.p-4 { padding: 1rem !important; }
     #konten > .bg-white.px-4 { padding-left: 1rem !important; padding-right: 1rem !important; }
-
-    .panel-auth .kepala { padding: 1.5rem 1.15rem 1.4rem; }
 }
 
 /* --------------------------------------------------------------------------
@@ -2318,10 +2533,29 @@ img, svg { max-width: 100%; height: auto; }
 }
 
 /* --- Penanda jumlah pada tautan Keranjang --- */
+
+/* Tombol keranjang berupa ikon bulat kecil (btn-garis), bukan lagi teks
+   lebar. Badge jumlah karena itu dipindah jadi mengambang di pojok
+   kanan-atas ikon, bukan inline sejajar teks seperti versi lama. */
+.tombol-ikon-keranjang {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.tombol-ikon-keranjang svg {
+    width: 20px;
+    height: 20px;
+}
+
 .lencana-keranjang {
     display: inline-block;
     min-width: 19px;
-    margin-left: 6px;
     padding: 0 6px;
     border-radius: var(--tss-radius-bulat);
     /* Warnanya sengaja tidak ditulis di sini. Blok kaca di bagian ikon
@@ -2333,7 +2567,12 @@ img, svg { max-width: 100%; height: auto; }
     font-weight: 700;
     line-height: 19px;
     text-align: center;
-    vertical-align: 1px;
+}
+
+.tombol-ikon-keranjang .lencana-keranjang {
+    position: absolute;
+    top: -6px;
+    right: -6px;
 }
 
 .lencana-keranjang.lencana-berubah { animation: tombol-denyut .32s ease-out; }

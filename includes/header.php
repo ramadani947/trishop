@@ -121,10 +121,16 @@ function nav_aktif($nama)
                 <div class="aksi-atas">
                     <?php if ($navUser): ?>
 
-                        <a class="tautan-ikon<?= nav_aktif('keranjang') ?>"
+                        <a class="btn-garis tombol-ikon-keranjang<?= nav_aktif('keranjang') ?>"
                            href="<?= BASE_URL ?>/pelanggan/keranjang.php"
                            data-tautan-keranjang aria-label="Keranjang belanja">
-                            Keranjang<?php if ($jumlahKeranjang > 0): ?><span class="lencana-keranjang"><?= $jumlahKeranjang ?></span><?php endif; ?>
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 4h2l2.4 12.2a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.6L21 8H6"
+                                      stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="10" cy="20.5" r="1.4" fill="currentColor"/>
+                                <circle cx="17.5" cy="20.5" r="1.4" fill="currentColor"/>
+                            </svg>
+                            <?php if ($jumlahKeranjang > 0): ?><span class="lencana-keranjang"><?= $jumlahKeranjang ?></span><?php endif; ?>
                         </a>
 
                         <div class="dropdown dropdown-profil-admin">
@@ -144,8 +150,7 @@ function nav_aktif($nama)
 
                     <?php else: ?>
 
-                        <a class="tautan-ikon" href="<?= BASE_URL ?>/auth/login.php">Masuk</a>
-                        <a class="btn-garis" href="<?= BASE_URL ?>/auth/register.php">Daftar</a>
+                        <a class="btn-garis" href="<?= BASE_URL ?>/auth/login.php">Login</a>
 
                     <?php endif; ?>
                 </div>
