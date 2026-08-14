@@ -1,0 +1,4 @@
+.git
+*.bat
+*.md
+node_modules

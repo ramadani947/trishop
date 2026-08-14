@@ -23,9 +23,9 @@ use Midtrans\Snap;
 // Ganti dengan kunci milik akun Midtrans Anda.
 // Ambil dari dashboard Midtrans, menu Settings > Access Keys,
 // pastikan Environment yang aktif adalah Sandbox.
-define('MIDTRANS_SERVER_KEY',    'Mid-server-FTGkpIh_ue02EYmJH7WY_Acl');
-define('MIDTRANS_CLIENT_KEY',    'Mid-client-KDKL2G1Pl6fqXAGB');
-define('MIDTRANS_IS_PRODUCTION', false);
+define('MIDTRANS_SERVER_KEY',    getenv('MIDTRANS_SERVER_KEY') ?: 'Mid-server-FTGkpIh_ue02EYmJH7WY_Acl');
+define('MIDTRANS_CLIENT_KEY',    getenv('MIDTRANS_CLIENT_KEY') ?: 'Mid-client-KDKL2G1Pl6fqXAGB');
+define('MIDTRANS_IS_PRODUCTION', getenv('MIDTRANS_IS_PRODUCTION') === 'true');
 
 // --- Endpoint Snap.js untuk sisi frontend ----------------------------------
 define('MIDTRANS_SNAP_JS', MIDTRANS_IS_PRODUCTION
@@ -45,7 +45,13 @@ define('MIDTRANS_SNAP_JS', MIDTRANS_IS_PRODUCTION
 // Akun ngrok ini memakai domain statis, jadi alamatnya tetap sama setiap
 // kali ngrok dinyalakan ulang dan baris ini tidak perlu diubah lagi.
 // Kosongkan hanya bila ingin menonaktifkan webhook.
-define('MIDTRANS_NOTIF_URL', 'https://unfailing-stamp-humongous.ngrok-free.dev/trishop/payment/callback.php');
+// Di Railway, domain publik sudah tersedia sendiri sehingga ngrok
+// tidak diperlukan lagi. Alamat webhook diambil dari environment
+// variable APP_URL (isi dengan domain Railway, tanpa trailing slash),
+// dan hanya jatuh ke ngrok bila APP_URL belum diatur (mode lokal).
+define('MIDTRANS_NOTIF_URL', getenv('APP_URL')
+    ? rtrim(getenv('APP_URL'), '/') . '/payment/callback.php'
+    : 'https://unfailing-stamp-humongous.ngrok-free.dev/trishop/payment/callback.php');
 
 // --- Konfigurasi SDK --------------------------------------------------------
 MidtransConfig::$serverKey    = MIDTRANS_SERVER_KEY;
